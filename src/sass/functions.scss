@@ -1,0 +1,10 @@
+@function generate-box-shadow($n) {
+    // Initial
+    $value: "#{random(2000)}px #{random(2000)}px #FFF";
+    @for $i from 2 through $n {
+      // Keep adding the new value every loop
+      $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
+    }
+
+    @return unquote($value)
+  }

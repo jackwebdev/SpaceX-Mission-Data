@@ -1,0 +1,229 @@
+@import "sass/functions.scss";
+@import "sass/variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+p {
+  color: $txt-primary;
+  font-size: $txt-size;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 25rem;
+  height: auto;
+}
+
+.bg {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 110vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #003860, #000428) no-repeat fixed;
+  z-index: -10;
+  overflow: hidden;
+}
+
+$shadows: generate-box-shadow(1000);
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows;   
+}
+
+.logs {
+  margin: 0 auto;
+  .log {
+    width: 25rem;
+    margin-bottom: 20px;
+    color: $txt-primary;
+    border-radius: 2rem;
+    background-color: #fff;
+    border: 0.05rem solid #fff;
+    overflow: hidden;
+    transition: transform 200ms linear, box-shadow 600ms ease-in-out;
+    box-shadow: inset 0 0 0.2rem rgba(3, 128, 136, 0.8),
+      0 0 1rem rgba(6, 123, 131, 0.8);
+    h3 {
+      margin: 0;
+      font-family: "Orbitron", sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background-image: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      font-size: 1.5rem;
+      color: white;
+      font-weight: 400;
+    }
+    img {
+      display: block;
+      margin: 0.8rem auto;
+      width: auto;
+      height: 10rem;
+      // max-width: 100%
+    }
+    h4 {
+      padding: 0.2rem 1.5rem;
+      text-align: center;
+      margin: 0;
+      font-weight: 200;
+      font-size: 1.4rem;
+    }
+    .details {
+      padding: 0.2rem 1.5rem;
+      font-size: 1.05rem;
+      text-align: left;
+    }
+    ul {
+      margin: 0;
+      padding: 0.5rem 1rem;
+    }
+    li {
+      list-style-type: none;
+      padding: 1.15rem;
+    }
+    .yes {
+      color: green;
+    }
+    .no {
+      color: red;
+    }
+    .webcast-button {
+      margin: 1rem auto;
+      display: block;
+      padding: 1rem;
+      width: 20rem;
+      height: auto;
+      border-radius: $border-radius;      color: #ffffff;
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+
+      background-size: 300%;
+      background-position: left;
+      background-image: linear-gradient(90deg, #000428 10%, #004e92 30%, #1370c1 60% );
+
+      transition: background-position 500ms ease-in-out;
+
+    }
+    .webcast-button:hover {
+      background-position: right;
+    }
+    .disabled {
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}
+.skeleton-log {
+  width: 25rem;
+  height: 50rem;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
+  background: lightgrey;
+  margin-bottom: 20px;
+
+  // New element with blocks
+  &:empty::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius $border-radius;
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
+
+    background-repeat: no-repeat;
+    animation: loading 3s infinite;  
+    
+    // The blocks are generated with background images
+    background-image: 
+      // Animation line
+      linear-gradient(
+        90deg,rgba(lightgrey, 0) 0,
+        rgba(lightgrey, 0.8) 50%,
+        rgba(lightgrey, 0) 100%
+      ),
+      // Header
+      linear-gradient(white, 7rem, transparent 0),
+      // Picture 
+      // radial-gradient(circle 5rem at center, white 99%, transparent 0),
+      linear-gradient(white, 15rem, transparent 0),
+      // Main text
+      linear-gradient(white, 10rem, transparent 0),
+      // Paragraph 1
+      linear-gradient(white, 5rem, transparent 0),
+      // Paragraph 2
+      linear-gradient(white, 5rem, transparent 0),
+      // Paragraph 3
+      linear-gradient(white, 5rem, transparent 0);
+
+      
+    background-size:
+      10rem 100%, // Animation line
+      100% 100%, // Header
+      10rem 10rem, // Picture
+      20rem 10rem, // Main text
+      18rem 1.5rem, // Paragraph 1
+      15rem 1.5rem, // Paragraph 2
+      17rem 1.5rem; // Paragraph 3
+    
+    background-position: 
+      -50% 0, // Animation line
+      0, // Header
+      50% 8.5rem, // Picture
+      50% 21rem, // Main text
+      2rem 35rem, // Paragraph 1
+      2rem 38rem, // Paragraph 2
+      2rem 41rem; // Paragraph 3
+  }
+}
+
+.log:hover {
+  box-shadow: inset 0 0 0.1rem rgba(3, 128, 136, 0.8),
+    0 0 2.5rem rgba(202, 217, 218, 0.8);
+  transform: translate3D(0, -4px, 0);
+}
+
+@keyframes loading {
+  to {
+    background-position: 
+    200% 0, // Animation line
+    0, // Header
+    50% 8.5rem, // Picture
+    50% 21rem, // Main text
+    2rem 35rem, // Paragraph 1
+    2rem 38rem, // Paragraph 2
+    2rem 41rem; // Paragraph 3
+  }
+}
+/* Small */
+@media (min-width: 576px) {
+}
+
+/* Medium  */
+@media (min-width: 768px) {
+}
+
+/* Large */
+@media (min-width: 911px) {
+}
+
+/* Extra Large */
+@media (min-width: 1200px) {
+}
