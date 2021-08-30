@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img className="logo" src="/images/SpaceX-Logo.png" alt="Logo"/>
+        <img className="logo" src={process.env.PUBLIC_URL + "/images/spacex-logo.png"} alt="Logo"/>
       </header>
       <main>
         <div className="bg">
