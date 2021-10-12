@@ -22,7 +22,7 @@ p {
 .logo {
   display: block;
   margin: 0 auto;
-  width: 25rem;
+  width: 20rem;
   height: auto;
 }
 
@@ -48,7 +48,7 @@ $shadows: generate-box-shadow(1000);
 .logs {
   margin: 0 auto;
   .log {
-    width: 25rem;
+    width: $logs-width;
     margin-bottom: 20px;
     color: $txt-primary;
     border-radius: 2rem;
@@ -132,7 +132,7 @@ $shadows: generate-box-shadow(1000);
   }
 }
 .skeleton-log {
-  width: 25rem;
+  width: $logs-width;
   height: 50rem;
   border-radius: $border-radius;
   box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
@@ -214,6 +214,18 @@ $shadows: generate-box-shadow(1000);
 }
 /* Small */
 @media (min-width: 576px) {
+  $logs-width: 25rem;
+  .logs {
+    .log {
+      width: $logs-width;
+    }
+  }
+  .skeleton-log {
+    width: $logs-width;
+  }
+  .logo {
+    width: 25rem;
+  }
 }
 
 /* Medium  */

@@ -72,7 +72,7 @@ const GenerateLogs = () => {
           payloadMass={upcoming[0].payloads[0].mass_kg || "N/A"}
           landSuccess=""
           launchSuccess=""
-          img={upcoming[0].links.patch.small || "/images/geostationary_orbit.png"}
+          img={upcoming[0].links.patch.small || "/SpaceX-Mission-Data/images/geostationary_orbit.png"}
           webcast={upcoming[0].links.webcast}
         />
         : <SkeletonLog />
@@ -97,7 +97,7 @@ const GenerateLogs = () => {
                     payloadMass={result.payloads[0].mass_kg ? `${result.payloads[0].mass_kg} kg` : "N/A"}
                     landSuccess={result.cores[0].landing_success}
                     launchSuccess={result.success}
-                    img={result.links.patch.small || "/images/geostationary_orbit.png"}
+                    img={result.links.patch.small || "/SpaceX-Mission-Data/images/geostationary_orbit.png"}
                     webcast={result.links.webcast}
                 />
             )
